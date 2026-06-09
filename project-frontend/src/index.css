@@ -1,0 +1,81 @@
+/* src/index.css */
+
+/* --- 1. Imports --- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* Modular Themes Import */
+@import './styles/theme-grid.css';
+@import './styles/theme-noise.css';
+
+/* Tailwind Directives */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* --- 2. Global Variables --- */
+:root {
+  --primary-color: #a78bfa;
+  --secondary-color: #8b5cf6;
+}
+
+/* --- 3. Base Body --- */
+body {
+  background-color: #030303;
+  color: #f1f5f9;
+  font-family: 'Inter', sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+  transition: background-color 0.5s ease; /* Smooth toggle */
+}
+
+/* --- 4. Utilities & Glass Effects (Common) --- */
+@layer utilities {
+
+  /* Premium Glass Card */
+  .glass-card {
+    /* background: rgba(20, 25, 40, 0.6); */
+    background: rgba(255, 255, 255, 0.01);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+  }
+
+  .glass-card:hover {
+    transform: translateY(-3px);
+    background: rgba(255, 255, 255, 0.03);
+    border-color: var(--primary-color);
+    box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.5), 0 0 15px -5px var(--primary-color);
+  }
+
+  /* Text Gradients */
+  .text-gradient {
+    background: linear-gradient(to right, #ffffff, #94a3b8);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb {
+    background: #334155;
+    border-radius: 10px;
+    border: 1px solid transparent;
+    background-clip: content-box;
+  }
+  ::-webkit-scrollbar-thumb:hover { background: var(--primary-color); }
+
+  /* Hide Scrollbar Utility */
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+}
+
+/* Shared Keyframes */
+@keyframes pulse-slow {
+  0%, 100% { opacity: 0.1; transform: scale(1); }
+  50% { opacity: 0.15; transform: scale(1.1); }
+}

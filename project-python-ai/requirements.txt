@@ -1,0 +1,19 @@
+Flask
+flask-cors
+
+numpy==1.26.4
+scipy==1.11.4
+scikit-learn==1.7.2
+librosa==0.11.0
+joblib
+
+soundfile
+pydub
+noisereduce
+ffmpeg-python
+torch==2.2.2
+torchaudio==2.2.2
+transformers==4.37.2
+# gunicorn
+
+

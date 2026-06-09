@@ -1,0 +1,11 @@
+# Virtual Environment
+venv
+.venv
+
+# Temporary Uploads
+uploads/
+
+# Python cache
+__pycache__/
+*.pyc
+dataset/

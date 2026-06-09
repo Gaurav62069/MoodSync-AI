@@ -1,0 +1,11 @@
+# Dependencies
+node_modules
+
+# Environment Variables
+.env
+
+# Private Keys
+config/serviceAccountKey.json
+
+# Logs
+npm-debug.log

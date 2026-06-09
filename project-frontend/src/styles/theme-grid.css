@@ -1,0 +1,46 @@
+/* src/styles/theme-grid.css */
+
+/* --- THEME: CYBER GRID --- */
+body.theme-grid {
+  
+  /* Pattern */
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+  
+  /* Movement Animation */
+  animation: gridFlow 40s linear infinite;
+}
+
+/* Vignette Mask (Dark Corners) */
+body.theme-grid::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at center, transparent 40%, #050505 100%) center center/cover no-repeat;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Spotlight Glow */
+body.theme-grid::after {
+  content: '';
+  position: fixed;
+  top: 10%;
+  left: 20%;
+  width: 40vw;
+  height: 40vw;
+  background: var(--primary-color);
+  filter: blur(150px);
+  opacity: 0.1;
+  z-index: -2;
+  border-radius: 50%;
+  animation: pulse-slow 8s ease-in-out infinite;
+}
+
+/* Keyframes for Grid */
+@keyframes gridFlow {
+  0% { background-position: 0 0; }
+  100% { background-position: 50px 50px; }
+}
