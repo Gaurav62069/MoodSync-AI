@@ -1,0 +1,14 @@
+{
+  "name": "moodsync-project",
+  "version": "1.0.0",
+  "description": "MoodSync AI is an advanced web and mobile application designed to intelligently sense your mood.",
+  "scripts": {
+    "moodsyncai": "concurrently -n FRONTEND,BACKEND,AI -c cyan,green,magenta \"npm run frontend\" \"npm run backend\"",
+    "frontend": "cd project-frontend && npm run dev",
+    "backend": "cd project-backend && npm run dev"
+    
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
+}
