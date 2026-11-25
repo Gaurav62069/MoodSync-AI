@@ -20,8 +20,10 @@ export const protect = asyncHandler(async (req, res, next) => {
 
       next();
     } catch (error) {
-      console.error(error);
       res.status(401);
+      if (error.name === 'TokenExpiredError') {
+        throw new Error('Not authorized, token expired');
+      }
       throw new Error('Not authorized, token failed');
     }
   }

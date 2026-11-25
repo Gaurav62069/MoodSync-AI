@@ -52,9 +52,9 @@ app.use(
     saveUninitialized: false,
     store: MongoStore.create({
       // 👈 2. यह ब्लॉक जोड़ें
-      mongoUrl: process.env.MONGO_URI, // .env वाली सेम DB लिंक
-      collectionName: "sessions", // DB में इस नाम का फोल्डर बनेगा
-      ttl: 24 * 60 * 60, // सेशन 1 दिन तक रहेगा (Time to live)
+      mongoUrl: process.env.MONGO_URI,
+      collectionName: "sessions",
+      ttl: 24 * 60 * 60,
     }),
     cookie: {
       secure: process.env.NODE_ENV === "production", // Production में true (HTTPS), Local में false
